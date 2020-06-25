@@ -7,7 +7,7 @@ from google.auth.transport.requests import Request
 import pandas as pd
 
 # If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '1nOO7asea325w93ottsoxxG30voUgfdvrRR_Lq8Xz8EE'
@@ -49,9 +49,8 @@ def main():
     else:
         df=pd.DataFrame(values)
         print(df)
-        #for row in values:
-            # Print columns A and E, which correspond to indices 0 and 4.
-           # print('%s, %s' % (row[0], row[4]))
+        #to find the total mark
+       
 
 if __name__ == '__main__':
     main()
