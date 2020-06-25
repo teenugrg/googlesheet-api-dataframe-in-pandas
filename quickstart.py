@@ -51,7 +51,17 @@ def main():
         df=pd.DataFrame(values[1:],columns=values[0])
 
         print(df)
-        
+        #to find the total mark
+        print('do yo need total mark: yes/no?')
+        ans = input()
+        if ans == "yes":
+            total= df["physics"].astype(int) + df["maths"].astype(int) + df["chemistry"].astype(int)
+            df["total"]=total
+            df['total'].astype(int) #to making in to integer
+            
+            print(df)
+          
+
        
 
 if __name__ == '__main__':
