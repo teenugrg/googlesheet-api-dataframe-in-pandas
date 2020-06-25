@@ -62,7 +62,7 @@ def main():
             print(df)
           
 
-         print("The student with maximum mark is ")
+            print("The student with maximum mark is ")
             print(df[df.total==df.total.max()]) #using max function to selecting the student with highest mark
 
 
