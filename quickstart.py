@@ -7,7 +7,7 @@ from google.auth.transport.requests import Request
 import pandas as pd
 
 # If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive.file']
 
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '1nOO7asea325w93ottsoxxG30voUgfdvrRR_Lq8Xz8EE'
@@ -47,9 +47,11 @@ def main():
     if not values:
         print('No data found.')
     else:
-        df=pd.DataFrame(values)
+        
+        df=pd.DataFrame(values[1:],columns=values[0])
+
         print(df)
-        #to find the total mark
+        
        
 
 if __name__ == '__main__':
