@@ -69,8 +69,30 @@ def main():
             list1 = df['total'].to_list() #the coluumn total is converted to list
             list1.insert(0,'total') #adding the column name 'total' to the first position of list
 
+            #updating the total marks in to the sheet
+            spreadsheet_id = '1nOO7asea325w93ottsoxxG30voUgfdvrRR_Lq8Xz8EE'  # TODO: Update placeholder value
+
+            # The A1 notation of a range to search for a logical table of data.
+            # Values will be appended after the last row of the table.
+            range_ = 'sheet1!E:E'  # TODO: Update placeholder value.
+
+            # How the input data should be interpreted.
+            value_input_option = 'RAW'  # TODO: Update placeholder value.
 
             
+           
+            value_range_body = {  "majorDimension": "COLUMNS",
+                                "range": "sheet1!E:E",
+                                "values": [
+                                            list1
+                                        ]
+                                }
+
+            request = service.spreadsheets().values().update(spreadsheetId=spreadsheet_id, range=range_, valueInputOption=value_input_option, body=value_range_body)
+            response = request.execute()
+
+            # TODO: Change code below to process the `response` dict:
+            print(response)
 
 
 if __name__ == '__main__':
