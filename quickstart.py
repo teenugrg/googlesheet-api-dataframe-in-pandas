@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 import pandas as pd
+#from pprint import pprint
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive.file']
@@ -64,6 +65,12 @@ def main():
 
             print("The student with maximum mark is ")
             print(df[df.total==df.total.max()]) #using max function to selecting the student with highest mark
+
+            list1 = df['total'].to_list() #the coluumn total is converted to list
+            list1.insert(0,'total') #adding the column name 'total' to the first position of list
+
+
+            
 
 
 if __name__ == '__main__':
